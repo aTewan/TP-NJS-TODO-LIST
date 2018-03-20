@@ -1,0 +1,23 @@
+{
+  "name": "tp-njs-todo-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aTewan/TP-NJS-TODO-LIST.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aTewan/TP-NJS-TODO-LIST/issues"
+  },
+  "homepage": "https://github.com/aTewan/TP-NJS-TODO-LIST#readme",
+  "dependencies": {
+    "sequelize": "^4.37.3",
+    "sqlite3": "^4.0.0"
+  }
+}
