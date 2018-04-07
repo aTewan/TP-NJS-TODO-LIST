@@ -1,0 +1,25 @@
+.wrapper {
+    border-style: solid;
+    border-width: .2em;
+    margin-top: 5em;
+}
+
+.champ {
+    border-bottom: .1em dashed lightgrey;
+    text-align: center;
+}
+
+.titre {
+    color:white;
+    text-align: center;
+}
+
+a {
+    color: inherit;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items : center;
+}

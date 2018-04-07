@@ -11,7 +11,7 @@ moment.locale('fr');
 
 /** Fonction construisant la page d'accueil */
 async function index(req,res) {
-    let text = './views/index.pug';
+    let text = './views/todos/index.pug';
     let renderIndex = pug.compileFile(text);
     let todos = await Todo.findAll();
 
@@ -28,7 +28,7 @@ async function index(req,res) {
 /** Fonction construisant la page d'un Todo. */
 async function getIdTodoPage(req,res) {
     let todoId = req.params.todoId;
-    let text = './views/idTodo.pug';
+    let text = './views/todos/idTodo.pug';
     let renderIndex = pug.compileFile(text);
     let todo = await Todo.findOne({
         where: { id: todoId }
@@ -53,7 +53,7 @@ async function getIdTodoJson(req,res) {
 
 /** Fonction construisant la page de création de Todo */
 async function getAddTodoPage(req,res) {
-    let text = './views/addTodo.pug';
+    let text = './views/todos/addTodo.pug';
     let renderAdd = pug.compileFile(text);
     let html = renderAdd({
         title: "Ajout d'un Todo"
@@ -70,7 +70,7 @@ async function getPatchTodoPage(req,res) {
     let todo = await Todo.findOne({
         where: { id: todoId }
     });
-    let text = './views/editTodo.pug';
+    let text = './views/todos/editTodo.pug';
     let renderEdit = pug.compileFile(text);
     let html = renderEdit({
         title : "Éditer un Todo",
