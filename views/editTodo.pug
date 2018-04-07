@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        include head.pug
+    body
+        header
+            include components/navbar.pug
+            div(class="row")
+                div(class="box col-4")
+                div(class="box col-4")
+                    div(class="wrapper")
+                        form(method='post' action='/todos/'+todo.id+'?_method=PATCH')
+                            h4(class="champ") Todo n° #{todo.id}
+                            div(class="champ")
+                                label Message :
+                                input(id="message" name="message" type="text" value= todo.message)
+                            div(class="champ" style="margin-top: 1em;")
+                                label Complétion :
+                                select(id="select" name="completion")
+                                    option done
+                                    option undone
+                            br
+                            div(class="btn-wrapper")
+                                button(class="btn success") Enregistrer les modifications
+                div(class="box col-4")

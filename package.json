@@ -17,6 +17,14 @@
   },
   "homepage": "https://github.com/aTewan/TP-NJS-TODO-LIST#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "caramel": "^2.0.0-beta",
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "moment": "^2.22.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "querystring": "^0.2.0",
     "sequelize": "^4.37.3",
     "sqlite3": "^4.0.0"
   }

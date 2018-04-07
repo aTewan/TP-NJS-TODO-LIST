@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title #{title}
+    body
+        header
+            h1 #{title}
+        form(method='POST')
+            div
+                label Name : 
+                input(type='text' id='name' name='name')
+            div
+                label Password : 
+                input(type='password' id='password' name='password')
+            button(type='submit') Envoyer

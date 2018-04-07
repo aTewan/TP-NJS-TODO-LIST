@@ -1,0 +1,20 @@
+doctype html
+html
+    include head.pug
+    body
+        header
+            include components/navbar.pug
+        div(class="row")
+            div(class="box col-4")
+            div(class="box col-4")
+                div(class="wrapper")
+                    h4(class="champ") Todo n° #{todo.id}
+                    p(class="champ") #{todo.message}
+                    p(class="champ") #{todo.completion}
+                    p(class="champ") #{todo.created}
+                    p(class="champ") #{todo.updated}
+                    div(class="btn-wrapper")
+                        form(method='post' action='/todos/'+todo.id+'?_method=DELETE')
+                            button(class="btn error") Supprimer
+                        a(class="btn warn" href='/todos/'+todo.id+'/edit') Modifier
+            div(class="box col-4")

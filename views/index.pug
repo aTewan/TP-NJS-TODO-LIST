@@ -1,0 +1,27 @@
+doctype html
+html
+    include head.pug
+    body
+        header
+            include components/navbar.pug
+        div(class="row" style="margin-top: 5em;")
+            div(class="box col-1")
+            div(class="box col-10")
+                table
+                    thead
+                        tr
+                            th ID
+                            th Message
+                            th Complétion
+                            th Création
+                            th Mis à jour
+                    tbody
+                        each todo in todos
+                            tr(style="cursor: pointer;" onclick="window.location='/todos/"+todo.id+"';")
+                                td #{todo.id}
+                                td #{todo.message}
+                                td #{todo.completion}
+                                td #{todo.created}
+                                td #{todo.updated}
+            div(class="box col-1")
+                

@@ -1,22 +1,19 @@
 const Sequelize = require('sequelize');
 const db = require('../db.js')
 
-const Todo = db.define('todo', {
+const User = db.define('user', {
     id: {
       type: Sequelize.INTEGER,
       primaryKey:true
     },
-    message: {
+    name: {
      type: Sequelize.STRING
    },
-    completion: {
+    password: {
      type: Sequelize.STRING
    },
-   created: {
-     type: Sequelize.STRING
-   },
-   updated: {
-       type: Sequelize.STRING
-   }
+   team: {
+    type: Sequelize.STRING
+  }
 });
-module.exports = Todo
+module.exports = User
