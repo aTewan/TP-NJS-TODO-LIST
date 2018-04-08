@@ -1,0 +1,20 @@
+doctype html
+html
+    include ../todos/head.pug
+    body
+        header
+        include ../todos/components/navbar.pug
+        div(class="row" style="margin-top: 5em;")
+            div(class="box col-4")
+            div(class="box col-4")
+                div(class="wrapper")
+                    form(method='POST' action='/users')
+                        div(class="champ")
+                            label Nom : 
+                            input(type="text" name="name" id="name")
+                        div(class="champ")
+                            label Mot de passe :
+                            input(type="password" name="password" id="password")
+                        div(class="btn-wrapper")
+                            button(class="btn success") Se connecter 
+            div(class="box col-4")

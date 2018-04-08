@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const path = require('path');
 const qs = require('querystring');
-const bcrypt = require('bcrypt');
+const session = require('express-session');
 
 /** Importation des models de Todo et User */
 const Todo = require('./models/todo.js');
@@ -22,7 +22,15 @@ app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/static', express.static(__dirname + '/'));
+app.use(session({secret: 'secret'}));
 
+let sess; 
+
+app.get('/',function(req,res){
+    sess = req.session;
+    sess.name = "bite";
+    console.log(sess)
+});
 
 /** Renvoie la liste des Todos. */
 app.get('/todos', (req,res) => {
@@ -69,15 +77,14 @@ app.get('/users', (req,res) => {
     userController.index(req,res);
 });
 
+app.get('/users/add', (req,res) => {
+    userController.loginPage(req,res);
+});
+
 app.post('/users', (req,res) => {
-    let name = req.body.name;
-    console.log(name);
-    let nul = null;
-    const saltRounds = 10;
-    bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
-        console.log("Nom : " + name, " MDP : " + hash)
-        User.create({name:name,password:hash, team:nul});
-    });
+    //userController.postUser(req,res);
+    console.log(req.body.name);
+    console.log(req.body.password);
 });
 
 /** Renvoie un JSON avec un status code 404 */

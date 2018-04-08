@@ -1,0 +1,25 @@
+doctype html
+html
+    include ../todos/head.pug
+    body
+        header
+        include ../todos/components/navbar.pug
+        div(class="row" style="margin-top: 5em;")
+            div(class="box col-1")
+            div(class="box col-10")
+                table
+                    thead
+                        tr
+                            th ID
+                            th Nom
+                            th Mot de passe
+                            th Team
+                    tbody
+                        each user in users
+                            tr
+                                td #{user.id}
+                                td #{user.name}
+                                td #{user.password}
+                                td #{user.team}
+            div(class="box col-1")
+                
